@@ -1,0 +1,240 @@
+/* Nastavenie pozadia a písma pre celé telo stránky */
+body{
+    background-color:rgb(244, 244, 244);
+    font-family: Serif;
+}
+
+/* Nastavenie pozadia s obrázkom pre #backgr */
+#backgr{
+    padding: 0% 100% 100% 0%;
+    background-image: url(../img/logo.png);
+    background-size: 100%;
+    height: 500px;
+}
+
+/* Nastavenie zarovnania textu pre hlavný text */
+.glavtext{
+    text-align: center;
+    margin: 3% auto 3% auto;
+}
+
+/* Nastavenie zarovnania textu pre malý text */
+.maltext{
+    text-align: center;
+}
+
+/* Nastavenie vzhľadu pre #text1 */
+#text1{
+    width: 90%;
+    margin: 1% auto 1% auto;
+    color: rgb(0, 0, 0);
+    background-color: rgb(250, 247, 240);
+    padding: 1% 1% 1% 1%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 2%;
+    text-align: left;
+}
+
+/* Nastavenie vzhľadu pre #text2 */
+#text2{
+    width: 90%;
+    margin: 1% auto 1% auto;
+    color: rgb(0, 0, 0);
+    background-color: rgb(250, 247, 240);
+    padding: 1% 1% 1% 1%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 2%;
+    text-align: right;
+}
+
+/* Nastavenie vzhľadu pre #text3 */
+#text3{
+    width: 90%;
+    margin: 3% auto 3% auto;
+    color: rgb(0, 0, 0);
+    background-color: rgb(250, 247, 240);
+    padding: 1% 1% 1% 1%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 2%;
+    text-align: center;
+}
+
+/* Nastavenie zarovnania textu pre individuálny text */
+.indtext{
+    text-align: center;
+}
+
+/* Nastavenie vzhľadu pre tlačidlo zdroja */
+.zdroj{
+    display: flex;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 2%;
+    text-align: center;
+    justify-content: center;
+    padding: 1%;
+    margin: 5% 25% 5% 25%;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Efekt pri hover na tlačidlo zdroja */
+.zdroj:hover{
+    background: black;
+    color: #ffffff;
+}
+
+/* Nastavenie vzhľadu pre logo */
+.logo{
+    margin-bottom: 20%;
+    color: #ffffff;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 1% 1% 1% 1%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.5), 0px 0px 30px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Nastavenie vzhľadu pre druhé logo */
+.logotwo{
+    margin-bottom: 30%;
+    color: #ffffff;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 1% 1% 1% 1%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.5), 0px 0px 30px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Nastavenie vzhľadu pre text loga */
+.logotext{
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie vzhľadu pre text loga s efektom */
+.logotexton{
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: #ffffff;
+    padding: 1% 1% 1% 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 100px 10px rgba(0, 0, 0, 0.5), 0px 0px 100px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Nastavenie vzhľadu pre malé logo */
+.logosmall{
+    margin-top: 10%;
+    text-align: left;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie pre zoznam položiek */
+.listok{
+    margin: 5% auto auto auto;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+/* Nastavenie pre text v zozname */
+.logolist{
+    margin-top: 7%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie pre otázky */
+.otazka{
+    margin: 0% 30% 0% 30%;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie pre malý text */
+.smalltext{
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+    size: 3rem;
+}
+
+/* Nastavenie okrajov pre úvodný blok */
+#intro{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+/* Nastavenie pre malé logo na normálnom mieste */
+.logosmallnorm{
+    margin-top: 10%;
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie okrajov pre obrázky */
+.images{
+    margin-top: 3%;
+    margin-bottom: 7%;
+}
+
+/* Nastavenie pre logo na začiatku */
+.logostart{
+    margin-top: 7%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    text-align: left;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie pre text na začiatku */
+.textstart{
+    margin-left: 3%;
+    text-align: left;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Nastavenie pre text na začiatku s väčším okrajom */
+.logostartplus{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    text-align: left;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+/* Pretekanie obsahu v tabuľke */
+.tabulka{
+    overflow-x: auto;
+}
+
+/* Nastavenie prechodu pre karty */
+.cards{
+    transition: all 0.3s ease;
+}
+
+/* Efekt zväčšenia a tieňa pri hover na karte */
+.cards:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Nastavenie výšky obrázkov v karuseli */
+.carousel-item img{
+    height: 38rem;
+}
