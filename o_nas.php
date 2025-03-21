@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="sk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxCesta - o nás</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- 
-    rgb(250, 247, 240)
-    rgb(216, 210, 194)
-    rgb(177, 116, 87)
-    rgb(74, 73, 71)
-    rgb(73, 54, 40)
-    -->
-</head>
+<?php 
+  include "header.php"
+?>
 <body>
 
     <!-- Navigačný panel -->
@@ -169,20 +155,9 @@
     </div>
 
     <!-- footer so základnými informáciami a kontaktami -->
-    <footer class="bg-dark text-white py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h5 class="mb-2">MaxCesta</h5>
-            <p class="mb-0">Cestovná kancelária</p>
-          </div>
-          <div class="col-md-6 text-md-end">
-            <p class="mb-1">Kontaktné číslo: <a class="link-light link-offset-2 link-underline link-underline-opacity-0" href="index.html">+421 011 111 111</a></p>
-            <p class="mb-0">Emailová adresa: <a class="link-light link-offset-2 link-underline link-underline-opacity-0" href="index.html">maxcesta@gmail.com</a></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <?php
+      include "footer.php"
+    ?>
 
     <!-- Skripty pre Bootstrap a ďalšie funkcie -->
     <script src="js/app.js"></script>
