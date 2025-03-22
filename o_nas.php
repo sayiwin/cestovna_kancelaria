@@ -1,5 +1,5 @@
 <?php 
-  include "header.php"
+  include "./parts/header.php";
 ?>
 <body>
 
@@ -12,21 +12,21 @@
             </button>
             <div class="navbar-brand">
             <img src="img/globe.svg" alt="">
-            <a class="navbar-brand h1" href="index.html">MaxCesta</a>
+            <a class="navbar-brand h1" href="index.php">MaxCesta</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="index.html">DOMOV</a>
+                    <a class="nav-link ms-3 fw-medium" href="index.php">DOMOV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium active" href="o_nas.html">O NÁS</a>
+                    <a class="nav-link ms-3 fw-medium active" href="o_nas.php">O NÁS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="katalog.html">KATALÓG</a>
+                    <a class="nav-link ms-3 fw-medium" href="katalog.php">KATALÓG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="zaevidovat.html">CESTOVNÁ REGISTRÁCIA</a>
+                    <a class="nav-link ms-3 fw-medium" href="zaevidovat.php">CESTOVNÁ REGISTRÁCIA</a>
                 </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -148,7 +148,7 @@
       <p class="logotext">
         Podeľte sa s nami o vaše cestovateľské sny a my vám pomôžeme ich premeniť na realitu. S MaxCesta každá cesta nie je len o trasách, ale o objavovaní nových možností, kultúr a zážitkov. Kontaktujte nás ešte dnes a dovolte nám pomôcť vám vytvoriť ideálnu cestu, ktorá vás inšpiruje a otvorí nové horizonty!
       </p>
-      <a class="zdroj" href="katalog.html">
+      <a class="zdroj" href="katalog.php">
         <h4 class="text-decoration-underline logotext link-offset-2 link-underline link-underline-opacity-0">Vaša cesta začína u nás</h4>
       </a>
       <img src="img/send.svg" class="rounded mx-auto d-block mb-5" alt="">
@@ -156,11 +156,11 @@
 
     <!-- footer so základnými informáciami a kontaktami -->
     <?php
-      include "footer.php"
+      include "./parts/footer.php";
     ?>
 
     <!-- Skripty pre Bootstrap a ďalšie funkcie -->
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
+</php>

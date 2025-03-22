@@ -1,5 +1,5 @@
 <?php 
-  include "header.php"
+  include "./parts/header.php";
 ?>
 <body>
 
@@ -12,21 +12,21 @@
             </button>
             <div class="navbar-brand">
             <img src="img/globe.svg" alt="">
-            <a class="navbar-brand h1" href="index.html">MaxCesta</a>
+            <a class="navbar-brand h1" href="index.php">MaxCesta</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="index.html">DOMOV</a>
+                    <a class="nav-link ms-3 fw-medium" href="index.php">DOMOV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="o_nas.html">O NÁS</a>
+                    <a class="nav-link ms-3 fw-medium" href="o_nas.php">O NÁS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="katalog.html">KATALÓG</a>
+                    <a class="nav-link ms-3 fw-medium" href="katalog.php">KATALÓG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium active" href="zaevidovat.html">CESTOVNÁ REGISTRÁCIA</a>
+                    <a class="nav-link ms-3 fw-medium active" href="zaevidovat.php">CESTOVNÁ REGISTRÁCIA</a>
                 </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -145,11 +145,11 @@
     
     <!-- footer so základnými informáciami a kontaktami -->
     <?php
-      include "footer.php"
+      include "./parts/footer.php";
     ?>
 
     <!-- Skripty pre Bootstrap a ďalšie funkcie -->
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
+</php>
