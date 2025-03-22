@@ -46,7 +46,7 @@ function validateForms(event) {
     // Presmerovanie na inú stránku po úspešnej validáci
     if (isValid) {
         event.preventDefault();
-        window.location.href = "otazka.html";
+        window.location.href = "./otazka.html";
       }
   
     return isValid;
@@ -117,7 +117,7 @@ function validateForm(event) {
     // Presmerovanie na koncovú stránku po úspešnej validácii
     if (isValid) {
       event.preventDefault();
-      window.location.href = "end.html";
+      window.location.href = "./end.html";
     }
 
     return isValid;

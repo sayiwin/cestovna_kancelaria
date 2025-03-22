@@ -1,5 +1,5 @@
 <?php 
-  include "header.php"
+  include "./parts/header.php";
 ?>
 <body>
 
@@ -12,21 +12,21 @@
             </button>
             <div class="navbar-brand">
             <img src="img/globe.svg" alt="">
-            <a class="navbar-brand h1" href="index.html">MaxCesta</a>
+            <a class="navbar-brand h1" href="index.php">MaxCesta</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="index.html">DOMOV</a>
+                    <a class="nav-link ms-3 fw-medium" href="index.php">DOMOV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="o_nas.html">O NÁS</a>
+                    <a class="nav-link ms-3 fw-medium" href="o_nas.php">O NÁS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium active" href="katalog.html">KATALÓG</a>
+                    <a class="nav-link ms-3 fw-medium active" href="katalog.php">KATALÓG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ms-3 fw-medium" href="zaevidovat.html">CESTOVNÁ REGISTRÁCIA</a>
+                    <a class="nav-link ms-3 fw-medium" href="zaevidovat.php">CESTOVNÁ REGISTRÁCIA</a>
                 </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -106,7 +106,7 @@
             <p class="card-text">Mesto, ktoré nikdy nezabúda na svoju romantickú atmosféru. Paríž je domovom mnohých kultúrnych skvostov – od Eiffelovej veže po Louvre. Prechádzky po Champs-Élysées, návšteva katedrály Notre-Dame alebo relax v Jardin des Tuileries vás vtiahnu do jeho magickej atmosféry. Paríž je tiež mestom módy a špičkových reštaurácií.</p>
           </div>
           <div class="card-body">
-            <a class="zdroj cards" href="zaevidovat.html">Spustiť registráciu!</a>
+            <a class="zdroj cards" href="zaevidovat.php">Spustiť registráciu!</a>
           </div>
         </div>
         <div class="card col-md-3 border border-3 border-dark" style="background-color: rgb(216, 210, 194)">
@@ -116,7 +116,7 @@
             <p class="card-text">Berlín je mesto, ktoré sa vyznačuje svojou dynamickou históriou a kultúrnou rozmanitosťou. Obdivujte impozantnú Braniborskú bránu, navštívte slávny Berlínsky múr a vychutnajte si bohatú kultúru v galériách a múzeách na Ostrově muzeí. Mesto ponúka moderný nádych v štvrti Mitte aj v tradičných oblastiach, ako je Alexanderplatz.</p>
           </div>
           <div class="card-body">
-            <a class="zdroj cards" href="zaevidovat.html">Spustiť registráciu!</a>
+            <a class="zdroj cards" href="zaevidovat.php">Spustiť registráciu!</a>
           </div>
         </div>
         <div class="card col-md-3 border border-3 border-darkv" style="background-color: rgb(250, 247, 240);">
@@ -126,7 +126,7 @@
             <p class="card-text">Londýn je fascinujúca kombinácia historických pamiatok a moderných atrakcií. Prezrite si slávny Tower of London, kde sú uložené korunovačné klenoty, navštívte Buckingham Palace, domov britskej kráľovskej rodiny, alebo sa prejdite okolo Big Bena a Houses of Parliament. Mesto ponúka aj bohatú kultúru v múzeách a galériách, ako je Britské múzeum alebo Tate Modern.</p>
           </div>
           <div class="card-body">
-            <a class="zdroj cards" href="zaevidovat.html">Spustiť registráciu!</a>
+            <a class="zdroj cards" href="zaevidovat.php">Spustiť registráciu!</a>
           </div>
         </div>
         <div class="card col-md-3 border border-3 border-dark" style="background-color: rgb(216, 210, 194)">
@@ -136,7 +136,7 @@
             <p class="card-text">Rím, mesto, ktoré je srdcom histórie a kultúry. Od antických pamiatok, ako je Koloseum, až po renesančné skvosty ako Bazilika svätého Petra. Prejdite sa po historických námestiach, ako je Piazza Navona, obdivujte Fontánu di Trevi alebo si oddýchnite v nádherných záhradách Vatikánu. Rím je mestom, ktoré vás zavedie do minulosti, ale zároveň ponúka moderné zážitky.</p>
           </div>
           <div class="card-body">
-            <a class="zdroj cards" href="zaevidovat.html">Spustiť registráciu!</a>
+            <a class="zdroj cards" href="zaevidovat.php">Spustiť registráciu!</a>
           </div>
         </div>
       </div>
@@ -417,11 +417,11 @@
     
     <!-- footer so základnými informáciami a kontaktami -->
     <?php
-      include "footer.php"
+      include "./parts/footer.php";
     ?>
 
     <!-- Skripty pre Bootstrap a ďalšie funkcie -->
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
+</php>
