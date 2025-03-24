@@ -118,6 +118,14 @@ body{
     font-variant: small-caps;
 }
 
+.navig {
+    font-size: 150px;
+    transition: font-size 0.3s ease-in-out;
+}
+.navig:hover{
+    font-size: 20px;
+}
+
 /* Nastavenie vzhľadu pre text loga s efektom */
 .logotexton{
     text-align: center;
