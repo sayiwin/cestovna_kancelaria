@@ -31,6 +31,10 @@ function getMenuData(string $type): array{
                 'registration' => [
                     'name' => 'Cestovná registrácia',
                     'path' => 'zaevidovat.php',
+                ],
+                'login' => [
+                    'name' => 'Prihlásiť',
+                    'path' => 'login.php',
                 ]
             ];
         }
@@ -42,10 +46,10 @@ function printMenu(array $menu) {
     $currentPage = basename($_SERVER['REQUEST_URI']);
 
     foreach ($menu as $menuName => $menuData) {
-        $isActive = ($currentPage === basename($menuData['path'])) ? 'active' : '';
-        
+        $isactive = ($currentPage === $menuData['path']) ? 'active' : '';
+        $extraclass = ($menuData['path'] == 'login.php') ? 'fw-bold' : '';
         echo '<li class="nav-item">
-                <a class="nav-link ms-3 fw-medium ' . $isActive . '" href="' . $menuData['path'] . '">' . $menuData['name'] . '</a>
+                <a class="nav-link ms-3 fw-medium ' . $isactive . $extraclass . '" href="' . $menuData['path'] . '">' . $menuData['name'] . '</a>
               </li>';
     }
 }
