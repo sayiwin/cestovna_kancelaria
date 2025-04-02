@@ -5,7 +5,7 @@
 <body>
 
   <!-- Navigačný panel -->
-  <?php include_once "./parts/nav.php"; ?>
+  <?php include_once "./parts/nav_for_general.php"; ?>
 
   <!-- Karusel s obrázkami a popisom -->
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -112,7 +112,7 @@
     </form>
   </div>
   
-  <!-- footer so základnými informáciami a kontaktami -->
+  <!-- footer so základnými informáciami, kontaktami, Skripty pre Bootstrap a ďalšie funkcie -->
   <?php
     include "./parts/footer.php";
   ?>

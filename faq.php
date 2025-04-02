@@ -5,7 +5,7 @@
 <body>
 
   <!-- Navigačný panel -->
-  <?php include_once "./parts/nav.php"; ?>
+  <?php include_once "./parts/nav_for_login.php"; ?>
 
   <!-- Karusel s obrázkami a popisom -->
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -117,13 +117,13 @@
     <p class="logotext">
       Podeľte sa s nami o vaše cestovateľské sny a my vám pomôžeme ich premeniť na realitu. S MaxCesta každá cesta nie je len o trasách, ale o objavovaní nových možností, kultúr a zážitkov. Kontaktujte nás ešte dnes a dovolte nám pomôcť vám vytvoriť ideálnu cestu, ktorá vás inšpiruje a otvorí nové horizonty!
     </p>
-    <a class="zdroj" href="katalog.php">
-      <h4 class="text-decoration-underline logotext link-offset-2 link-underline link-underline-opacity-0">Vaša cesta začína u nás</h4>
+    <a class="zdroj" href="registracia.php">
+      <h4 class="text-decoration-underline logotext link-offset-2 link-underline link-underline-opacity-0">Zaregistrujte sa!</h4>
     </a>
     <img src="img/send.svg" class="rounded mx-auto d-block mb-5" alt="">
   </div>
 
-  <!-- footer so základnými informáciami a kontaktami -->
+  <!-- footer so základnými informáciami, kontaktami, Skripty pre Bootstrap a ďalšie funkcie -->
   <?php
     include "./parts/footer.php";
   ?>

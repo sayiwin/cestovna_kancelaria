@@ -11,18 +11,14 @@ function validateMenuType(string $type): bool{
     }
 }
 
-function getMenuData(string $type): array{
+function getMenuDataForGeneral(string $type): array{
     $menu = [];
     if(validateMenuType($type)) {
         if($type === "header") {
             $menu = [
                 'home' => [
                     'name' => 'Domov',
-                    'path' => 'index.php',
-                ],
-                'faq' => [
-                    'name' => 'O nás',
-                    'path' => 'faq.php',
+                    'path' => 'home.php',
                 ],
                 'portfolio' => [
                     'name' => 'Katalóg',
@@ -31,10 +27,6 @@ function getMenuData(string $type): array{
                 'registration' => [
                     'name' => 'Cestovná registrácia',
                     'path' => 'zaevidovat.php',
-                ],
-                'login' => [
-                    'name' => 'Prihlásiť',
-                    'path' => 'login.php',
                 ]
             ];
         }
@@ -42,16 +34,48 @@ function getMenuData(string $type): array{
     return $menu;
 }
 
-function printMenu(array $menu) {
+function printMenuForGeneral(array $menu) {
     $currentPage = basename($_SERVER['REQUEST_URI']);
 
     foreach ($menu as $menuName => $menuData) {
         $isactive = ($currentPage === $menuData['path']) ? 'active' : '';
-        $extraclass = ($menuData['path'] == 'login.php') ? 'fw-bold' : '';
         echo '<li class="nav-item">
-                <a class="nav-link ms-3 fw-medium ' . $isactive . $extraclass . '" href="' . $menuData['path'] . '">' . $menuData['name'] . '</a>
+                <a class="nav-link ms-3 fw-medium ' . $isactive . '" href="' . $menuData['path'] . '">' . $menuData['name'] . '</a>
               </li>';
     }
 }
 
+function getMenuDataForLogin(string $type): array{
+    $menu = [];
+    if(validateMenuType($type)) {
+        if($type === "header") {
+            $menu = [
+                'home' => [
+                    'name' => 'Registrácia',
+                    'path' => 'registracia.php',
+                ],
+                'faq' => [
+                    'name' => 'O nás',
+                    'path' => 'faq.php',
+                ],
+                'portfolio' => [
+                    'name' => 'Otázky',
+                    'path' => 'otazky.php',
+                ]
+            ];
+        }
+    }
+    return $menu;
+}
+
+function printMenuForLogin(array $menu) {
+    $currentPage = basename($_SERVER['REQUEST_URI']);
+
+    foreach ($menu as $menuName => $menuData) {
+        $isactive = ($currentPage === $menuData['path']) ? 'active' : '';
+        echo '<li class="nav-item">
+                <a class="nav-link ms-3 fw-medium ' . $isactive . '" href="' . $menuData['path'] . '">' . $menuData['name'] . '</a>
+              </li>';
+    }
+}
 ?>
