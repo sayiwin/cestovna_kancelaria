@@ -122,4 +122,74 @@ function validateForm(event) {
 
     return isValid;
   }
+
+  function validateRegistr(event) {
+
+    // Skryjeme predchádzajúce chyby
+    document.getElementById('nameError').style.display = 'none';
+    document.getElementById('priezvError').style.display = 'none';
+    document.getElementById('emailError').style.display = 'none';
+    document.getElementById('phoneError').style.display = 'none';
+    document.getElementById('pohlavieError').style.display = 'none';
+    document.getElementById('termsError').style.display = 'none';
+
+    // Zhromažďovanie hodnôt
+    var name = document.getElementById('name').value;
+    var priezv = document.getElementById('priezv').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var pohlavie = document.getElementById('pohlavie').value;
+    var terms = document.getElementById('terms').checked;
   
+    var isValid = true;
+
+    // Kontrola, či je pole 'name' prázdne
+    if (name.trim() === "") {
+      document.getElementById('nameError').style.display = 'block';
+      isValid = false;
+    }
+
+    // Kontrola, či je pole 'priezvisko' prázdne
+    if (priezv.trim() === "") {
+      document.getElementById('priezvError').style.display = 'block';
+      isValid = false;
+    }    
+
+    // Kontrola platnosti emailu
+    if (!email.includes('@')) {
+      document.getElementById('emailError').style.display = 'block';
+      isValid = false;
+    }
+
+    // Kontrola platnosti telefónneho čísla
+    if (phone === "") {
+      document.getElementById('phoneError').style.display = 'block';
+      isValid = false;
+    }
+
+    // Kontrola, či je vybrané pohlavie
+    if (pohlavie === "") {
+      document.getElementById('pohlavieError').style.display = 'block';
+      isValid = false;
+    }
+
+    // Kontrola, či používateľ súhlasil s podmienkami
+    if (!terms) {
+      document.getElementById('termsError').style.display = 'block';
+      isValid = false;
+    }
+
+    // Zabránime odoslanie formulára
+    if (!isValid) {
+      event.preventDefault();
+      alert("Vyplňte povinné polia.");
+    }
+
+    // Presmerovanie na koncovú stránku po úspešnej validácii
+    if (isValid) {
+      event.preventDefault();
+      window.location.href = "http://localhost/cestovna_kancelaria/home.php";
+    }
+
+    return isValid;
+  }

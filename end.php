@@ -8,7 +8,7 @@
       <h3>Ďakujeme za registráciu!</h3>
       <p>Vaša registrácia bola úspešne odoslaná. Tešíme sa na vašu účasť!</p>
     </div>
-    <button class="btn btn-dark btn-return" onclick="window.location.href='index.php'">Späť na hlavnú stránku</button>
+    <button class="btn btn-dark btn-return" onclick="window.location.href='home.php'">Späť na hlavnú stránku</button>
   </div>
 
   <!-- Skripty pre Bootstrap a ďalšie funkcie -->

@@ -8,7 +8,7 @@
       <h3>Ďakujeme za odoslanie formulára!</h3>
       <p>Vaša správa bola úspešne odoslaná. Ďakujeme za váš záujem!</p>
     </div>
-    <button class="btn btn-dark btn-return" onclick="window.location.href='index.php'">Späť na hlavnú stránku</button>
+    <button class="btn btn-dark btn-return" onclick="window.location.href='registracia.php'">Späť na hlavnú stránku</button>
   </div>
 
 
