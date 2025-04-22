@@ -54,20 +54,20 @@
     <!-- Kontaktný formulár pre otázky -->
     <div class="container">
     <h3 class="logolist">Ak máte akékoľvek otázky - napíšte nám</h3>
-    <form id="contactForm" onsubmit="return validateForms(event)">
+    <form id="contactForm" method="POST" action="db/control_otazky.php"  onsubmit="return validateForms(event)">
       <div class="mb-3 otazka">
-        <label for="name" class="form-label">Vaše meno:</label>
-        <input type="text" id="name" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno...">
-        <div id="nameError" class="text-danger" style="display:none;">Prosím, zadajte vaše meno.</div>
+        <label for="names" class="form-label">Vaše meno:</label>
+        <input type="text" id="names" name="names" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno...">
+        <div id="namesError" class="text-danger" style="display:none;">Prosím, zadajte vaše meno.</div>
       </div>
       <div class="mb-3 otazka">
         <label for="email" class="form-label">Email address:</label>
-        <input type="email" id="email" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoj email...">
+        <input type="email" id="email" name="email" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoj email...">
         <div id="emailError" class="text-danger" style="display:none;">Prosím, zadajte platnú emailovú adresu.</div>
       </div>
       <div class="mb-3 otazka">
         <label for="question" class="form-label">Vaša otázka:</label>
-        <textarea id="question" name="otazky" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoju otázku..."></textarea>
+        <textarea id="question" name="question" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoju otázku..."></textarea>
         <div id="questionError" class="text-danger" style="display:none;">Prosím, zadajte svoju otázku.</div>
       </div>
       <div class="mb-3 form-check otazka">

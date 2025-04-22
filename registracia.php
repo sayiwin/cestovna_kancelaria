@@ -89,13 +89,23 @@
     <form id="registrationForm" onsubmit="return validateRegistr(event)">
       <div class="mb-3 otazka">
         <label for="name" class="form-label">Vaše meno:</label>
-        <input type="text" id="name" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno a priezvisko...">
+        <input type="text" id="name" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno...">
         <div id="nameError" class="text-danger" style="display:none;">Prosím, zadajte vaše meno.</div>
       </div>
       <div class="mb-3 otazka">
         <label for="priezv" class="form-label">Vaše priezvisko:</label>
-        <input type="text" id="priezv" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno a priezvisko...">
+        <input type="text" id="priezv" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte priezvisko...">
         <div id="priezvError" class="text-danger" style="display:none;">Prosím, zadajte vaše priezvisko.</div>
+      </div>
+      <div class="mb-3 otazka">
+        <label for="login" class="form-label">Vaš login:</label>
+        <input type="text" id="login" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte login...">
+        <div id="loginError" class="text-danger" style="display:none;">Prosím, zadajte vaš login.</div>
+      </div>
+      <div class="mb-3 otazka">
+        <label for="heslo" class="form-label">Vaše heslo:</label>
+        <input type="password" id="heslo" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte heslo...">
+        <div id="hesloError" class="text-danger" style="display:none;">Prosím, zadajte vaše heslo.</div>
       </div>
       <div class="mb-3 otazka">
         <label for="email" class="form-label">Vaš email address:</label>
@@ -126,10 +136,34 @@
       </div>
     </form>
   </div>
+
+  <div class="container">
+    <h3 class="logolist">Prihláste sa</h3>
+    <form id="registrationForm" onsubmit="return validateLogin(event)">
+      <div class="mb-3 otazka">
+        <label for="logins" class="form-label">Vaš login:</label>
+        <input type="text" id="logins" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte login...">
+        <div id="loginsError" class="text-danger" style="display:none;">Prosím, zadajte vaš login.</div>
+      </div>
+      <div class="mb-3 otazka">
+        <label for="heslos" class="form-label">Vaše heslo:</label>
+        <input type="password" id="heslos" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte heslo...">
+        <div id="heslosError" class="text-danger" style="display:none;">Prosím, zadajte vaše heslo.</div>
+      </div>
+      <div class="mb-3 form-check otazka">
+        <input type="checkbox" id="termss" class="form-check-input bg-dark">
+        <label class="form-check-label" for="termss">Si z iného počítača?</label>
+        <div id="termssError" class="text-danger" style="display:none;">Musíte súhlasiť.</div>
+      </div>
+      <div class="d-grid gap-2 col-5 mx-auto d-md-flex justify-content-md-end">
+        <button class="btn btn-outline-dark border-2 fw-medium mb-5 btn-lg" type="submit">Prihláste sa</button>
+      </div>
+    </form>
+  </div>
   <!-- footer so základnými informáciami a kontaktami -->
+   
   <?php
   include "./parts/footer.php";
   ?>
-<script src="js/app.js"></script>
 </body>
 </php>
