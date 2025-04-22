@@ -62,19 +62,9 @@
     <h3 class="logolist">Registrácia</h3>
     <form id="registrationForm" onsubmit="return validateForm(event)">
       <div class="mb-3 otazka">
-        <label for="name" class="form-label">Vaše meno a priezvisko:</label>
-        <input type="text" id="name" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno a priezvisko...">
-        <div id="nameError" class="text-danger" style="display:none;">Prosím, zadajte vaše meno a priezvisko.</div>
-      </div>
-      <div class="mb-3 otazka">
-        <label for="email" class="form-label">Vaš email address:</label>
-        <input type="email" id="email" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoj email...">
-        <div id="emailError" class="text-danger" style="display:none;">Prosím, zadajte platnú emailovú adresu.</div>
-      </div>
-      <div class="mb-3 otazka">
-        <label for="phone" class="form-label">Vaše číslo:</label>
-        <input type="tel" id="phone" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoje čislo...">
-        <div id="phoneError" class="text-danger" style="display:none;">Prosím, zadajte platné číslo.</div>
+        <label for="pocet" class="form-label">Počet ľudí:</label>
+        <input type="text" id="pocet" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoje čislo...">
+        <div id="pocetError" class="text-danger" style="display:none;">Prosím, zadajte platné číslo.</div>
       </div>
       <div class="mb-3 otazka">
         <label for="mesto">Vyberte si mesto, do ktorého chcete cestovať:</label>

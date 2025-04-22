@@ -1,12 +1,12 @@
 function validateForms(event) {
     // Skryjeme predchádzajúce chyby
-    document.getElementById('nameError').style.display = 'none';
+    document.getElementById('namesError').style.display = 'none';
     document.getElementById('emailError').style.display = 'none';
     document.getElementById('questionError').style.display = 'none';
     document.getElementById('termsError').style.display = 'none';
     
     // Zhromažďovanie hodnôt
-    var name = document.getElementById('name').value;
+    var names = document.getElementById('names').value;
     var email = document.getElementById('email').value;
     var question = document.getElementById('question').value;
     var terms = document.getElementById('terms').checked;
@@ -14,8 +14,8 @@ function validateForms(event) {
     var isValid = true;
   
     // Kontrola, či je pole 'name' prázdne
-    if (name.trim() === "") {
-      document.getElementById('nameError').style.display = 'block';
+    if (names.trim() === "") {
+      document.getElementById('namesError').style.display = 'block';
       isValid = false;
     }
 
@@ -45,7 +45,6 @@ function validateForms(event) {
 
     // Presmerovanie na inú stránku po úspešnej validáci
     if (isValid) {
-        event.preventDefault();
         window.location.href = "http://localhost/cestovna_kancelaria/otazka.php";
       }
   
@@ -55,38 +54,22 @@ function validateForms(event) {
 function validateForm(event) {
 
   // Skryjeme predchádzajúce chyby
-    document.getElementById('nameError').style.display = 'none';
-    document.getElementById('emailError').style.display = 'none';
-    document.getElementById('phoneError').style.display = 'none';
+    document.getElementById('pocetError').style.display = 'none';
     document.getElementById('mestoError').style.display = 'none';
     document.getElementById('tourError').style.display = 'none';
     document.getElementById('termsError').style.display = 'none';
 
     // Zhromažďovanie hodnôt
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
+    var pocet = document.getElementById('pocet').value;
     var mesto = document.getElementById('mesto').value;
     var tour = document.querySelector('input[name="tour"]:checked');
     var terms = document.getElementById('terms').checked;
   
     var isValid = true;
 
-    // Kontrola, či je pole 'name' prázdne
-    if (name.trim() === "") {
-      document.getElementById('nameError').style.display = 'block';
-      isValid = false;
-    }
-
-    // Kontrola platnosti emailu
-    if (!email.includes('@')) {
-      document.getElementById('emailError').style.display = 'block';
-      isValid = false;
-    }
-
-    // Kontrola platnosti telefónneho čísla
-    if (phone === "") {
-      document.getElementById('phoneError').style.display = 'block';
+    // Kontrola platnosti pocetu
+    if (pocet === "") {
+      document.getElementById('pocetError').style.display = 'block';
       isValid = false;
     }
 
@@ -123,11 +106,13 @@ function validateForm(event) {
     return isValid;
   }
 
-  function validateRegistr(event) {
+function validateRegistr(event) {
 
     // Skryjeme predchádzajúce chyby
     document.getElementById('nameError').style.display = 'none';
     document.getElementById('priezvError').style.display = 'none';
+    document.getElementById('loginError').style.display = 'none';
+    document.getElementById('hesloError').style.display = 'none';
     document.getElementById('emailError').style.display = 'none';
     document.getElementById('phoneError').style.display = 'none';
     document.getElementById('pohlavieError').style.display = 'none';
@@ -136,60 +121,112 @@ function validateForm(event) {
     // Zhromažďovanie hodnôt
     var name = document.getElementById('name').value;
     var priezv = document.getElementById('priezv').value;
+    var login = document.getElementById('login').value;
+    var heslo = document.getElementById('heslo').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
     var pohlavie = document.getElementById('pohlavie').value;
     var terms = document.getElementById('terms').checked;
-  
+
     var isValid = true;
 
     // Kontrola, či je pole 'name' prázdne
     if (name.trim() === "") {
-      document.getElementById('nameError').style.display = 'block';
-      isValid = false;
+        document.getElementById('nameError').style.display = 'block';
+        isValid = false;
     }
 
     // Kontrola, či je pole 'priezvisko' prázdne
     if (priezv.trim() === "") {
-      document.getElementById('priezvError').style.display = 'block';
-      isValid = false;
-    }    
+        document.getElementById('priezvError').style.display = 'block';
+        isValid = false;
+    }
+    
+    // Kontrola, či je pole 'login' prázdne
+    if (login.trim() === "") {
+        document.getElementById('loginError').style.display = 'block';
+        isValid = false;
+    }
+
+    // Kontrola, či je pole 'heslo' prázdne
+    if (heslo.trim() === "") {
+        document.getElementById('hesloError').style.display = 'block';
+        isValid = false;
+    }
 
     // Kontrola platnosti emailu
     if (!email.includes('@')) {
-      document.getElementById('emailError').style.display = 'block';
-      isValid = false;
+        document.getElementById('emailError').style.display = 'block';
+        isValid = false;
     }
 
     // Kontrola platnosti telefónneho čísla
     if (phone === "") {
-      document.getElementById('phoneError').style.display = 'block';
-      isValid = false;
+        document.getElementById('phoneError').style.display = 'block';
+        isValid = false;
     }
 
     // Kontrola, či je vybrané pohlavie
     if (pohlavie === "") {
-      document.getElementById('pohlavieError').style.display = 'block';
-      isValid = false;
+        document.getElementById('pohlavieError').style.display = 'block';
+        isValid = false;
     }
 
     // Kontrola, či používateľ súhlasil s podmienkami
     if (!terms) {
-      document.getElementById('termsError').style.display = 'block';
-      isValid = false;
+        document.getElementById('termsError').style.display = 'block';
+        isValid = false;
     }
 
     // Zabránime odoslanie formulára
     if (!isValid) {
-      event.preventDefault();
-      alert("Vyplňte povinné polia.");
+        event.preventDefault();
+        alert("Vyplňte povinné polia.");
     }
 
     // Presmerovanie na koncovú stránku po úspešnej validácii
     if (isValid) {
+        event.preventDefault();
+        window.location.href = "http://localhost/cestovna_kancelaria/home.php";
+    }
+    return isValid;
+}
+
+function validateLogin(event) {
+  // Skryjeme predchádzajúce chyby
+  document.getElementById('loginsError').style.display = 'none';
+  document.getElementById('heslosError').style.display = 'none';
+  document.getElementById('termssError').style.display = 'none';
+
+  // Zhromažďovanie hodnôt
+  var login = document.getElementById('logins').value;
+  var heslo = document.getElementById('heslos').value;
+  var terms = document.getElementById('termss').checked;
+
+  var isValid = true;
+
+  // Kontrola, či je pole 'login' prázdne
+  if (login.trim() === "") {
+      document.getElementById('loginsError').style.display = 'block';
+      isValid = false;
+  }
+
+  // Kontrola, či je pole 'heslo' prázdne
+  if (heslo.trim() === "") {
+      document.getElementById('heslosError').style.display = 'block';
+      isValid = false;
+  }
+
+  // Zabránime odoslanie formulára
+  if (!isValid) {
+      event.preventDefault();
+      alert("Vyplňte povinné polia.");
+  }
+
+  // Presmerovanie na koncovú stránku po úspešnej validácii
+  if (isValid) {
       event.preventDefault();
       window.location.href = "http://localhost/cestovna_kancelaria/home.php";
-    }
-
-    return isValid;
   }
+  return isValid;
+}
