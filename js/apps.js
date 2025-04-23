@@ -54,34 +54,34 @@ function validateForms(event) {
 function validateForm(event) {
 
   // Skryjeme predchádzajúce chyby
-    document.getElementById('pocetError').style.display = 'none';
+    document.getElementById('countError').style.display = 'none';
     document.getElementById('mestoError').style.display = 'none';
-    document.getElementById('tourError').style.display = 'none';
+    document.getElementById('typesError').style.display = 'none';
     document.getElementById('termsError').style.display = 'none';
 
     // Zhromažďovanie hodnôt
-    var pocet = document.getElementById('pocet').value;
-    var mesto = document.getElementById('mesto').value;
-    var tour = document.querySelector('input[name="tour"]:checked');
+    var count = document.getElementById('count').value;
+    var city = document.getElementById('city').value;
+    var types = document.querySelector('input[name="types"]:checked');
     var terms = document.getElementById('terms').checked;
   
     var isValid = true;
 
     // Kontrola platnosti pocetu
-    if (pocet === "") {
-      document.getElementById('pocetError').style.display = 'block';
+    if (count === "") {
+      document.getElementById('countError').style.display = 'block';
       isValid = false;
     }
 
     // Kontrola, či je vybrané mesto
-    if (mesto === "") {
-      document.getElementById('mestoError').style.display = 'block';
+    if (city === "") {
+      document.getElementById('cityError').style.display = 'block';
       isValid = false;
     }
 
     // Kontrola, či je vybraný typ zájazdu
-    if (!tour) {
-      document.getElementById('tourError').style.display = 'block';
+    if (!types) {
+      document.getElementById('typesError').style.display = 'block';
       isValid = false;
     }
 
