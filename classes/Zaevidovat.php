@@ -14,13 +14,14 @@ class Zaevidovat extends Database {
         $this->connection = $this->getConnection();
     }
     
-    public function ulozitSpravu($count, $city, $types) {
-        $sql = "INSERT INTO request (count, city, types)
-                VALUES(:count, :city, :types)";
+    public function ulozitSpravu($login, $count, $city, $types) {
+        $sql = "INSERT INTO request (login, count, city, types)
+                VALUES(:login, :count, :city, :types)";
         $statement = $this->connection->prepare($sql);
         
         try {
             $insert = $statement->execute([
+                ':login' => $login,
                 ':count' => $count,
                 ':city' => $city,
                 ':types' => $types

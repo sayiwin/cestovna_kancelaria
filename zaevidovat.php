@@ -21,7 +21,7 @@
   <!-- Sekcia formulára pre registráciu -->
   <div class="container">
     <h3 class="logolist">Registrácia</h3>
-    <form id="registrationForm" method="POST" action="db/control_zaevid.php" onsubmit="return validateForm(event)">
+    <form id="registrationForm" onsubmit="return validateForm(event)" method="POST" action="db/control_zaevid.php">
       <div class="mb-3 otazka">
         <label for="count" class="form-label">Počet ľudí:</label>
         <input type="text" id="count" name="count" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte počet ľudí...">

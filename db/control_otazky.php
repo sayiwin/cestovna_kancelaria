@@ -8,12 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $question = $_POST['question'] ?? '';
 
-    // Overenie údajov
     if (empty($names) || empty($email) || empty($question)) {
         die('Chyba: Všetky polia sú povinné!');
     }
 
-    // Uloženie správy do databázy
     $otazky = new Otazky();
     $ulozene = $otazky->ulozitSpravu($names, $email, $question);
 
