@@ -1,21 +1,26 @@
 <?php
+session_start();
+
 require_once('../classes/Zaevidovat.php');
 
 use cestovna_kancelaria\classes\Zaevidovat;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_SESSION['Login'])) {
+        die('Používateľ nie je prihlásený!');
+    }
+
+    $login = $_SESSION['Login'];
     $count = $_POST['count'] ?? '';
     $city = $_POST['city'] ?? '';
     $types = $_POST['types'] ?? '';
 
-    // Overenie údajov
     if (empty($count) || empty($city) || empty($types)) {
         die('Chyba: Všetky polia sú povinné!');
     }
 
-    // Uloženie správy do databázy
     $request = new Zaevidovat();
-    $ulozene = $request->ulozitSpravu($count, $city, $types);
+    $ulozene = $request->ulozitSpravu($login, $count, $city, $types);
 
     if ($ulozene) {
         header('Location: ../end.php');
@@ -26,5 +31,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     die('Neplatný prístup!');
 }
-
 ?>
