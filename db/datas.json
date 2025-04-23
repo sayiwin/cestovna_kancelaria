@@ -1,0 +1,34 @@
+{
+    "home": {
+      "type": "with-controls",
+      "slides": [
+        {
+          "img": "img/pexels-elina-sazonova-1850619.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Maximálny oddych pre maximálnych osob",
+          "text": "Dovoľte si dobrodružstvo, ktoré si zaslúžite!"
+        },
+        {
+          "img": "img/pexels-davifnr-2064827.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Maximálny oddych pre maximálnych osob",
+          "text": "Zažite slobodu a dobrodružstvo!"
+        }
+      ]
+    },
+    "others": {
+      "type": "simple",
+      "slides": [
+        {
+          "img": "img/pexels-elina-sazonova-1850619.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Cestovná registrácia"
+        },
+        {
+          "img": "img/pexels-davifnr-2064827.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Cestovná registrácia"
+        }
+      ]
+    }
+  }  

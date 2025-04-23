@@ -8,46 +8,7 @@
   <?php include_once "./parts/nav_for_login.php"; ?>
 
   <!-- Karusel s obrázkami a popisom -->
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/pexels-elina-sazonova-1850619.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <div class="logotwo mt-5">
-              <h1>MaxCesta</h1>
-              <h5 class="text-decoration-underline">Otázky</h5>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/pexels-davifnr-2064827.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <div class="logotwo mt-5 text-decoration-underline">
-              <h1>MaxCesta</h1>
-              <h5 class="text-decoration-underline">Otázky</h5>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/pexels-kristina-paul-713711153-27960501.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <div class="logotwo mt-5 text-decoration-underline">
-              <h1>MaxCesta</h1>
-              <h5 class="text-decoration-underline">Otázky</h5>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/pexels-mati-angulo-330211-930595.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <div class="logotwo mt-5 text-decoration-underline">
-              <h1>MaxCesta</h1>
-              <h5 class="text-decoration-underline">Otázky</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
+  <?php render_carousel('others'); ?>
     
   <hr class="border border-dark border-3 opacity-75">
 
