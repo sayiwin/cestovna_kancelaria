@@ -13,6 +13,11 @@
   <hr class="border border-dark border-3 opacity-75">
 
   <!-- Sekcia dôvodov, prečo si vybrať MaxCesta -->
+
+  <form method="POST" action="db/control_logout.php" class="d-grid gap-2 col-5 mx-auto d-md-flex justify-content-md-center">
+    <button class="btn btn-outline-dark border-2 fw-medium mb-5 btn-lg" type="submit">Logout</button>
+  </form>
+
   <div class="container-fluid listok">
     <h3 class="logosmall">Prečo si vybrať MaxCesta?</h3>
     <ul class="list-group list-group-flush logotext">
