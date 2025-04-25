@@ -26,7 +26,7 @@ class Users extends Database {
             $statement->execute();
             $existingUser = $statement->fetch();
             if ($existingUser) {
-                throw new Exception("Používateľ už existuje.");
+                throw new \Exception("Používateľ už existuje.");
             }
 
             $sql = "INSERT INTO users (firstname, lastname, login, password, email, phone) VALUES (?, ?, ?, ?, ?, ?)";
@@ -38,10 +38,8 @@ class Users extends Database {
             $statement->bindParam(5, $email);
             $statement->bindParam(6, $phone);
             $statement->execute();
-        } catch (Exception $e){
+        } catch (\Exception $e){
             echo "Chyba pri vkladaní dát do databázy: " . $e->getMessage();
-        } finally {
-            $this->connection = null;
         }
     }
 
@@ -52,7 +50,7 @@ class Users extends Database {
         $statement->execute();
         $user = $statement->fetch();
         if (!$user) {
-            throw new Exception("Používateľ s daným menom neexistuje.");
+            throw new \Exception("Používateľ s daným menom neexistuje.");
         }
 
         $storedPassword = $user['password'];
@@ -72,5 +70,19 @@ class Users extends Database {
         session_destroy();
         header('Location: http://localhost/cestovna_kancelaria/registracia.php');
         exit();
+    }
+
+    function deleteUser($login) {
+        $sql = "DELETE FROM users WHERE login = :login";
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(':login', $login);
+        
+        try {
+            $result = $statement->execute();
+            return $result;
+        } catch (\Exception $exception) {
+            error_log("Chyba pri mazaní: " . $exception->getMessage());
+            return false;
+        }
     }
 }

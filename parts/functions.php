@@ -128,4 +128,27 @@ function render_carousel($page = 'others') {
     $output .= '</div>';
     echo $output;
 }
+
+function pozdrav() {
+    session_start();
+
+    if (!isset($_SESSION['Login'])) {
+        echo '<h3>Vitajte!</h3>';
+        return;
+    }
+
+    $login = $_SESSION['Login'];
+
+    $hour = date('H');
+    if ($hour < 12) {
+        $greeting = "Dobré ráno";
+    } elseif ($hour < 18) {
+        $greeting = "Dobrý deň";
+    } else {
+        $greeting = "Dobrý večer";
+    }
+
+    echo "<h3 class='logolist mt-0'>$greeting, pán $login!</h3>";
+}
+
 ?>

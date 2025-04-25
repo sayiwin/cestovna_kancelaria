@@ -12,25 +12,25 @@
     
   <hr class="border border-dark border-3 opacity-75">
 
-  <!-- Sekcia dôvodov, prečo si vybrať MaxCesta -->
+  <?php
+    pozdrav();
+  ?>
 
-  <form method="POST" action="db/control_logout.php" class="d-grid gap-2 col-5 mx-auto d-md-flex justify-content-md-center">
-    <button class="btn btn-outline-dark border-2 fw-medium mb-5 btn-lg" type="submit">Logout</button>
-  </form>
-
-  <div class="container-fluid listok">
-    <h3 class="logosmall">Prečo si vybrať MaxCesta?</h3>
-    <ul class="list-group list-group-flush logotext">
-      <li class="list-group-item">INDIVIDUÁLNY PRÍSTUP: Vždy berieme do úvahy vaše priania a robíme všetko pre to, aby bol váš pobyt čo najpríjemnejší a jedinečný.</li>
-      <li class="list-group-item">KVALITA SLUŽIEB: Naši klienti sú s nami spokojní, pretože si vážime ich dôveru a vždy sa snažíme ponúknuť najlepšiu kvalitu služieb.</li>
-      <li class="list-group-item">ŠIROKÝ VÝBER DESTINÁCIÍ: Ponúkame nielen obľúbené turistické destinácie, ale aj skryté perly sveta, ktoré vám prinesú nezabudnuteľné zážitky.</li>
-      <li class="list-group-item">SKÚSENOSTI A PROFESIONALITA: Náš tím tvoria odborníci, ktorí ovládajú cestovný ruch do detailov a sú pripravení vám poskytnúť to najlepšie.</li>
-      <li class="list-group-item">FLEXIBILITA A PRISPÔSOBENIE ZÁJAZDOV: Chápeme, že každý klient má svoje vlastné predstavy o ideálnom výlete, preto vám umožňujeme flexibilitu v výbere itinerára, dátumov či špeciálnych požiadaviek. Každý zájazd sa dá prispôsobiť presne podľa vašich predstáv.</li>
-      <li class="list-group-item">ZÁKAZNÍCKA PODPORA 24/7: Naša starostlivosť o klientov nekončí podpisom zmluvy. Sme tu pre vás počas celého pobytu, poskytujeme 24-hodinovú podporu a zaručujeme, že sa na nás môžete kedykoľvek obrátiť v prípade akýchkoľvek otázok alebo problémov.</li>
-    </ul>
+  <!--  -->
+  <div class="container">
+    <form method="POST" action="db/control_logout.php" class="d-grid gap-2 col-5 mx-auto d-md-flex justify-content-md-center">
+      <button class="btn btn-outline-dark border-2 fw-medium mb-5 btn-lg" type="submit">Logout</button>
+    </form>
   </div>
 
-  <a class="zdroj" href="faq.php"><h4 class="logotext">Viac o nás!</h4></a>
+  <div class="mb-3 otazka">
+    <form method="POST" action="db/delete_user.php">
+      <label for="login" class="form-label">Zadajte svoj login pre potvrdenie odstránenia účtu:</label>
+      <input type="text" id="login" name="login" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte login...">
+      <button class="btn btn-outline-danger border-2 fw-medium mt-2 btn-lg" type="submit">Odstrániť účet</button>
+      <div id="loginError" class="text-danger mt-2" style="display:none;">Prosím, zadajte váš login.</div>
+    </form>
+  </div>
 
   <hr class="border border-dark border-3 opacity-75">
 

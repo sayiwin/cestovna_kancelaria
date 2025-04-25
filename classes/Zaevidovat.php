@@ -15,13 +15,23 @@ class Zaevidovat extends Database {
     }
     
     public function ulozitSpravu($login, $count, $city, $types) {
-        $sql = "INSERT INTO request (login, count, city, types)
-                VALUES(:login, :count, :city, :types)";
+        $userData = $this->getUserDataByLogin($login);
+    
+        if (!$userData) {
+            throw new \Exception("Používateľ nebol nájdený.");
+        }
+    
+        $sql = "INSERT INTO request (login, firstname, lastname, email, phone, count, city, types)
+                VALUES(:login, :firstname, :lastname, :email, :phone, :count, :city, :types)";
         $statement = $this->connection->prepare($sql);
-        
+    
         try {
             $insert = $statement->execute([
                 ':login' => $login,
+                ':firstname' => $userData['firstname'],
+                ':lastname' => $userData['lastname'],
+                ':email' => $userData['email'],
+                ':phone' => $userData['phone'],
                 ':count' => $count,
                 ':city' => $city,
                 ':types' => $types
@@ -34,4 +44,13 @@ class Zaevidovat extends Database {
             return false;
         }
     }
+
+    public function getUserDataByLogin($login) {
+        $sql = "SELECT firstname, lastname, email, phone FROM users WHERE login = :login LIMIT 1";
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(':login', $login);
+        $statement->execute();
+        return $statement->fetch();
+    }
 }
+?>
