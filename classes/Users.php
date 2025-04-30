@@ -85,4 +85,43 @@ class Users extends Database {
             return false;
         }
     }
+
+    public function updateUser($firstname, $lastname, $login, $password, $email, $phone, $userId) {
+        try {
+            $hashedPassword = !empty($password) ? password_hash($password, PASSWORD_BCRYPT) : null;
+
+            $sql = "UPDATE users SET firstname = ?, lastname = ?, login = ?, email = ?, phone = ? ";
+            
+            if ($hashedPassword) {
+                $sql .= ", password = ?";
+            }
+
+            $sql .= " WHERE ID = ?";
+
+            $stmt = $this->connection->prepare($sql);
+            
+            if ($hashedPassword) {
+                $stmt->bindParam(1, $firstname);
+                $stmt->bindParam(2, $lastname);
+                $stmt->bindParam(3, $login);
+                $stmt->bindParam(4, $email);
+                $stmt->bindParam(5, $phone);
+                $stmt->bindParam(6, $hashedPassword);
+                $stmt->bindParam(7, $userId);
+            } else {
+                $stmt->bindParam(1, $firstname);
+                $stmt->bindParam(2, $lastname);
+                $stmt->bindParam(3, $login);
+                $stmt->bindParam(4, $email);
+                $stmt->bindParam(5, $phone);
+                $stmt->bindParam(6, $userId);
+            }
+
+            $stmt->execute();
+
+            return true;
+        } catch (Exception $e) {
+            return "Chyba pri aktualizácii údajov: " . $e->getMessage();
+        }
+    }
 }

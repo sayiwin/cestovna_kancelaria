@@ -80,6 +80,7 @@ function printMenuForLogin(array $menu) {
 }
 
 function render_carousel($page = 'others') {
+    session_start();
     $data = json_decode(file_get_contents('db\datas.json'), true);
 
     if (!isset($data[$page])) return;
@@ -130,7 +131,6 @@ function render_carousel($page = 'others') {
 }
 
 function pozdrav() {
-    session_start();
 
     if (!isset($_SESSION['Login'])) {
         echo '<h3>Vitajte!</h3>';
