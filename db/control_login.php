@@ -3,8 +3,6 @@ require_once('../classes/Users.php');
 
 use cestovna_kancelaria\classes\Users;
 
-// define('__ROOT__', dirname(dirname(__FILE__)));
-
 $login = $_POST['login'];
 $password = $_POST['password'];
 

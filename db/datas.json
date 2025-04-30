@@ -5,14 +5,26 @@
         {
           "img": "img/pexels-elina-sazonova-1850619.jpg",
           "title": "MaxCesta",
-          "subtitle": "Maximálny oddych pre maximálnych osob",
-          "text": "Dovoľte si dobrodružstvo, ktoré si zaslúžite!"
+          "subtitle": "Dovoľte si dobrodružstvo, ktoré si zaslúžite!",
+          "text": "Predstavte si, ako sa slnko ponára do mora na tropickej pláži, alebo ako sa túlate po historických uličkách, ktoré rozprávajú príbehy dávnych civilizácií. MaxCesta vám ponúka cestu k nezabudnuteľným zážitkom, ktoré vám zmenia život!"
         },
         {
           "img": "img/pexels-davifnr-2064827.jpg",
           "title": "MaxCesta",
-          "subtitle": "Maximálny oddych pre maximálnych osob",
-          "text": "Zažite slobodu a dobrodružstvo!"
+          "subtitle": "Zažite slobodu a dobrodružstvo!",
+          "text": "Vypnite na chvíľu od každodenných starostí a ponorte sa do nových svetov! Prežite naplno každý moment, objavujte nové miesta, spoznávajte nové kultúry a ľudí. Cestovanie nie je len o destináciách, je to o tých nezabudnuteľných chvíľach, ktoré prežijete!"
+        },
+        {
+          "img": "img/pexels-kristina-paul-713711153-27960501.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Pocítite v srdci túto slobodu, ktorá vás napĺňa!",
+          "text": "Za čo je lepšie ako vidieť svet na vlastné oči? Či už relaxujete na pláži, potápate sa v krištáľovo čistých vodách alebo objavujete krásy miest, na ktoré nikdy nezabudnete - cesta je vždy viac než len cieľ."
+        },
+        {
+          "img": "img/pexels-mati-angulo-330211-930595.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Zaslúžite si to!",
+          "text": "Prečo čakať na dokonalý moment? Ten je práve teraz! Zarezervujte si svoju vysnívanú dovolenku a nechajte sa unášať vlnami nových zážitkov, ktoré vás čakajú. Znova sa nájdete a obnovíte svoju energiu. Podľa nás to rozhodne stojí za to!"
         }
       ]
     },
@@ -26,6 +38,16 @@
         },
         {
           "img": "img/pexels-davifnr-2064827.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Cestovná registrácia"
+        },
+        {
+          "img": "img/pexels-kristina-paul-713711153-27960501.jpg",
+          "title": "MaxCesta",
+          "subtitle": "Cestovná registrácia"
+        },
+        {
+          "img": "img/pexels-mati-angulo-330211-930595.jpg",
           "title": "MaxCesta",
           "subtitle": "Cestovná registrácia"
         }
