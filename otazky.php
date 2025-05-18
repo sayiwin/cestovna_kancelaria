@@ -2,6 +2,7 @@
   include "./parts/header.php";
   include_once "./parts/functions.php";
 ?>
+
 <body>
 
   <!-- Navigačný panel -->

@@ -184,12 +184,10 @@ function validateLogin(event) {
   // Skryjeme predchádzajúce chyby
   document.getElementById('loginsError').style.display = 'none';
   document.getElementById('heslosError').style.display = 'none';
-  document.getElementById('termssError').style.display = 'none';
 
   // Zhromažďovanie hodnôt
   var login = document.getElementById('logins').value;
   var heslo = document.getElementById('heslos').value;
-  var terms = document.getElementById('termss').checked;
 
   var isValid = true;
 
