@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("registracia.php");
+    exit;
+}
+
 $menu = getMenuDataForGeneral("header");
 ?>
 <div class="container-fluid p-0">

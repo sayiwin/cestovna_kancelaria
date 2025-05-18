@@ -82,7 +82,7 @@
     <p class="logotext">
       Podeľte sa s nami o vaše cestovateľské sny a my vám pomôžeme ich premeniť na realitu. S MaxCesta každá cesta nie je len o trasách, ale o objavovaní nových možností, kultúr a zážitkov. Kontaktujte nás ešte dnes a dovolte nám pomôcť vám vytvoriť ideálnu cestu, ktorá vás inšpiruje a otvorí nové horizonty!
     </p>
-    <a class="zdroj" href="katalog.php">
+    <a class="zdroj cards" href="katalog.php">
       <h4 class="text-decoration-underline logotext link-offset-2 link-underline link-underline-opacity-0">Vaša cesta začína u nás</h4>
     </a>
     <img src="img/send.svg" class="rounded mx-auto d-block mb-5" alt="">
