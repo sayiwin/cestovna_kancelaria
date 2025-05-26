@@ -1,5 +1,6 @@
 <?php 
-  include "./parts/header.php";
+  include_once "./classes/WebsiteHelper.php";
+  WebsiteHelper::renderHead();
 ?>
 <body>
 

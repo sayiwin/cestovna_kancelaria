@@ -1,9 +1,6 @@
 <?php
 namespace cestovna_kancelaria\classes;
 
-error_reporting(E_ALL);
-ini_set("display_errors", "On");
-
 require_once(__DIR__ . '/Database.php');
 
 class Otazky extends Database {
@@ -32,5 +29,12 @@ class Otazky extends Database {
             http_response_code(500);
             return false;
         }
+    }
+
+    public function zobrazOtazky() {
+        $sql = "SELECT names, question FROM questions ORDER BY id DESC";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 }

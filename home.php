@@ -1,20 +1,18 @@
 <?php 
-  include "./parts/header.php";
-  include_once "./parts/functions.php";
+  include_once "./classes/WebsiteHelper.php";
+  $websiteHelper = new WebsiteHelper();
+  WebsiteHelper::renderHead();
 ?>
 <body>
 
-  <!-- Navigačný panel -->
-  <?php include_once "./parts/nav_for_general.php"; ?>
+  <?php $websiteHelper->renderNavbarGeneral(); ?>
 
-  <!-- Karusel obrázkov s popismi -->
-  <?php render_carousel('home'); ?>
-    
+  <?php $websiteHelper->renderCarousel('home'); ?>
+
   <hr class="border border-dark border-3 opacity-75">
 
-  <?php pozdrav();?>
+  <?php $websiteHelper->pozdrav(); ?>
 
-  <!-- Sekcia správy používateľov -->
   <div class="container">
     <form method="POST" action="db/control_logout.php" class="d-grid gap-2 col-5 mx-auto d-md-flex justify-content-md-center">
       <button class="btn btn-outline-dark border-2 fw-medium mb-5 btn-lg" type="submit">Logout</button>
@@ -76,11 +74,10 @@
 
   <hr class="border border-dark border-3 opacity-75">
 
-  <!-- Sekcia pozvánok -->
   <div class="container-fluid">
     <h3 class="logolist">Pripravení na nové dobrodružstvá?</h3>
     <p class="logotext">
-      Podeľte sa s nami o vaše cestovateľské sny a my vám pomôžeme ich premeniť na realitu. S MaxCesta každá cesta nie je len o trasách, ale o objavovaní nových možností, kultúr a zážitkov. Kontaktujte nás ešte dnes a dovolte nám pomôcť vám vytvoriť ideálnu cestu, ktorá vás inšpiruje a otvorí nové horizonty!
+      Podeľte sa s nami o vaše cestovateľské sny a my vám pomôžeme ich premeniť na realitu...
     </p>
     <a class="zdroj cards" href="katalog.php">
       <h4 class="text-decoration-underline logotext link-offset-2 link-underline link-underline-opacity-0">Vaša cesta začína u nás</h4>
@@ -88,9 +85,6 @@
     <img src="img/send.svg" class="rounded mx-auto d-block mb-5" alt="">
   </div>
 
-  <!-- footer so základnými informáciami, kontaktami, Skripty pre Bootstrap a ďalšie funkcie -->
-  <?php
-    include "./parts/footer.php";
-  ?>
+  <?php WebsiteHelper::renderFooter(); ?>
 </body>
-</php>
+</html>

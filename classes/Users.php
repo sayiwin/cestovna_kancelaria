@@ -1,9 +1,6 @@
 <?php
 namespace cestovna_kancelaria\classes;
 
-error_reporting(E_ALL);
-ini_set("display_errors", "On");
-
 require_once(__DIR__ . '/Database.php');
 
 class Users extends Database {

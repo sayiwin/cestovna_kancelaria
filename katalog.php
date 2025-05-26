@@ -1,14 +1,13 @@
 <?php 
-  include "./parts/header.php";
-  include_once "./parts/functions.php";
+  include_once "./classes/WebsiteHelper.php";
+  $websiteHelper = new WebsiteHelper();
+  WebsiteHelper::renderHead();
 ?>
 <body>
 
-  <!-- Navigačný panel -->
-  <?php include_once "./parts/nav_for_general.php"; ?>
+  <?php $websiteHelper->renderNavbarGeneral(); ?>
 
-  <!-- Karusel s obrázkami a popisom -->
-  <?php render_carousel('others'); ?>
+  <?php $websiteHelper->renderCarousel('others'); ?>
 
   <hr class="border border-dark border-3 opacity-75">
   
@@ -70,17 +69,11 @@
     <h3 class="logolist">Cestovné ceny</h3>
     <p>Ceny rôznych typov túr sa líšia v závislosti od typu zážitku, destinácie a trvania výletu. Každá destinácia ponúka rôzne možnosti, ktoré vyhovujú rôznym preferenciám a rozpočtom cestovateľov.</p>
     <ul class="list-group list-group-flush">
-      <?php include 'tours/rodinny.php'; ?>
-      <?php include 'tours/kulturny.php'; ?>
-      <?php include 'tours/relax.php'; ?>
-      <?php include 'tours/dobrodruzny.php'; ?>
-      <?php include 'tours/exspresny.php'; ?>
+      <?php $websiteHelper->printKatalog(); ?>
     </ul>
   </div>
   
   <!-- footer so základnými informáciami, kontaktami, Skripty pre Bootstrap a ďalšie funkcie -->
-  <?php
-    include "./parts/footer.php";
-  ?>
+  <?php WebsiteHelper::renderFooter(); ?>
 </body>
 </php>
