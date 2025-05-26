@@ -1,14 +1,13 @@
 <?php 
-  include "./parts/header.php";
-  include_once "./parts/functions.php";
+  include_once "./classes/WebsiteHelper.php";
+  $websiteHelper = new WebsiteHelper();
+  WebsiteHelper::renderHead();
 ?>
 <body>
 
-  <!-- Navigačný panel -->
-  <?php include_once "./parts/nav_for_login.php"; ?>
+  <?php $websiteHelper->renderNavbarLogin(); ?>
 
-  <!-- Karusel s obrázkami a popisom -->
-  <?php render_carousel('others'); ?>
+  <?php $websiteHelper->renderCarousel('others'); ?>
 
   <hr class="border border-dark border-3 opacity-75">
 
@@ -85,8 +84,6 @@
   </div>
 
   <!-- footer so základnými informáciami, kontaktami, Skripty pre Bootstrap a ďalšie funkcie -->
-  <?php
-    include "./parts/footer.php";
-  ?>
+  <?php WebsiteHelper::renderFooter(); ?>
 </body>
 </php>

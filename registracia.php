@@ -1,14 +1,13 @@
 <?php 
-  include "./parts/header.php";
-  include_once "./parts/functions.php";
+  include_once "./classes/WebsiteHelper.php";
+  $websiteHelper = new WebsiteHelper();
+  WebsiteHelper::renderHead();
 ?>
 <body>
 
-  <!-- Navigačný panel -->
-  <?php include_once "./parts/nav_for_login.php"; ?>
+  <?php $websiteHelper->renderNavbarLogin(); ?>
 
-  <!-- Karusel obrázkov s popismi -->
-  <?php render_carousel('home'); ?>
+  <?php $websiteHelper->renderCarousel('home'); ?>
     
   <hr class="border border-dark border-3 opacity-75">
 
@@ -87,10 +86,8 @@
       </div>
     </form>
   </div>
+
   <!-- footer so základnými informáciami a kontaktami -->
-   
-  <?php
-  include "./parts/footer.php";
-  ?>
+  <?php WebsiteHelper::renderFooter(); ?>
 </body>
 </php>
