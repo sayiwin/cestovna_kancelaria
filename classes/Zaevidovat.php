@@ -1,5 +1,5 @@
 <?php
-namespace cestovna_kancelaria\classes;
+namespace cestovna_kancelaria\classes\Zaevidovat;
 
 require_once(__DIR__ . '/Database.php');
 

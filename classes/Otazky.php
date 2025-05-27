@@ -1,7 +1,8 @@
 <?php
-namespace cestovna_kancelaria\classes;
+namespace cestovna_kancelaria\classes\Otazky;
 
 require_once(__DIR__ . '/Database.php');
+use cestovna_kancelaria\classes\Database;
 
 class Otazky extends Database {
     protected $connection;
@@ -31,10 +32,11 @@ class Otazky extends Database {
         }
     }
 
-    public function zobrazOtazky() {
-        $sql = "SELECT names, question FROM questions ORDER BY id DESC";
+    public function zobrazOtazky(int $limit = 5): array {
+        $sql = "SELECT names, question FROM questions ORDER BY id DESC LIMIT :limit";
         $statement = $this->connection->prepare($sql);
+        $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
-    }
+}
 }
