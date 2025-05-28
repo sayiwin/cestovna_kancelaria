@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/Otazky.php';
-use cestovna_kancelaria\classes\Otazky\Otazky;
 class WebsiteHelper {
 
     public function validateMenuType(string $type): bool {
@@ -107,12 +106,6 @@ class WebsiteHelper {
     }
 
     public function pozdrav() {
-        if(session_status() === PHP_SESSION_NONE) session_start();
-        if (!isset($_SESSION['Login'])) {
-            echo '<h3>Vitajte!</h3>';
-            return;
-        }
-
         $login = htmlspecialchars($_SESSION['Login']);
         $hour = date('H');
         if ($hour < 12) {
@@ -227,6 +220,14 @@ class WebsiteHelper {
             echo '<p>Žiadne otázky zatiaľ neboli pridané.</p>';
         }
         echo '</div>';
+    }
+
+    public static function sessionControl() {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['Login'])) {
+            echo "<script>window.location.href = 'registracia.php';</script>";
+            exit;
+        }
     }
 
 }

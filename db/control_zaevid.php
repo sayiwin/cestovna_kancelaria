@@ -3,8 +3,6 @@ session_start();
 
 require_once('../classes/Zaevidovat.php');
 
-use cestovna_kancelaria\classes\Zaevidovat;
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_SESSION['Login'])) {
         die('Používateľ nie je prihlásený!');

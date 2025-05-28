@@ -1,8 +1,6 @@
 <?php
 require_once('../classes/Otazky.php');
 
-use cestovna_kancelaria\classes\Otazky;
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $names = $_POST['names'] ?? '';
     $email = $_POST['email'] ?? '';

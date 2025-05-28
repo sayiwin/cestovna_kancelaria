@@ -1,5 +1,4 @@
 <?php
-namespace cestovna_kancelaria\classes;
 
 require_once __DIR__ . '/../db/config.php';
 

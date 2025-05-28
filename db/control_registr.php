@@ -1,8 +1,6 @@
 <?php
 require_once('../classes/Users.php');
 
-use cestovna_kancelaria\classes\Users;
-
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $login = $_POST['login'];

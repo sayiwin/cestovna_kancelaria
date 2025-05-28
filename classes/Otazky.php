@@ -1,8 +1,7 @@
 <?php
-namespace cestovna_kancelaria\classes\Otazky;
 
 require_once(__DIR__ . '/Database.php');
-use cestovna_kancelaria\classes\Database;
+
 
 class Otazky extends Database {
     protected $connection;

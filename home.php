@@ -1,5 +1,6 @@
 <?php 
   include_once "./classes/WebsiteHelper.php";
+  WebsiteHelper::sessionControl();
   $websiteHelper = new WebsiteHelper();
   WebsiteHelper::renderHead();
 ?>
@@ -32,34 +33,9 @@
     <h3 class="logolist">Upravit moje údaje</h3>
     <form id="registrationForm" method="POST" action="db/update_user.php">
       <div class="mb-3 otazka">
-        <label for="firstname" class="form-label">Vaše meno:</label>
-        <input type="text" id="firstname" name="firstname" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte meno...">
-        <div id="firstnameError" class="text-danger" style="display:none;">Prosím, zadajte vaše meno.</div>
-      </div>
-      <div class="mb-3 otazka">
-        <label for="lastname" class="form-label">Vaše priezvisko:</label>
-        <input type="text" id="lastname" name="lastname" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte priezvisko...">
-        <div id="lastnameError" class="text-danger" style="display:none;">Prosím, zadajte vaše priezvisko.</div>
-      </div>
-      <div class="mb-3 otazka">
         <label for="login" class="form-label">Vaš login:</label>
         <input type="text" id="login" name="login" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte login...">
         <div id="loginError" class="text-danger" style="display:none;">Prosím, zadajte vaš login.</div>
-      </div>
-      <div class="mb-3 otazka">
-        <label for="password" class="form-label">Vaše heslo:</label>
-        <input type="password" id="password" name="password" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte heslo...">
-        <div id="passwordError" class="text-danger" style="display:none;">Prosím, zadajte vaše heslo.</div>
-      </div>
-      <div class="mb-3 otazka">
-        <label for="email" class="form-label">Vaš email address:</label>
-        <input type="email" id="email" name="email" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoj email...">
-        <div id="emailError" class="text-danger" style="display:none;">Prosím, zadajte platnú emailovú adresu.</div>
-      </div>
-      <div class="mb-3 otazka">
-        <label for="phone" class="form-label">Vaše číslo:</label>
-        <input type="tel" id="phone" name="phone" class="form-control border border-2 border-dark" style="background: rgb(250, 247, 240);" placeholder="Zadajte svoje čislo...">
-        <div id="phoneError" class="text-danger" style="display:none;">Prosím, zadajte platné číslo.</div>
       </div>
       <div class="mb-3 form-check otazka">
         <input type="checkbox" id="terms" class="form-check-input bg-dark">
