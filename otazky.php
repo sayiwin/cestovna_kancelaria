@@ -41,7 +41,7 @@
       </div>
     </form>
   </div>
-
+  <?php WebsiteHelper::renderQuestions(5); ?>
   <!-- footer so základnými informáciami a kontaktami -->
   <?php WebsiteHelper::renderFooter(); ?>
 </body>

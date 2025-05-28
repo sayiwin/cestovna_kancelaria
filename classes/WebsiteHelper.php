@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/Otazky.php';
 class WebsiteHelper {
 
     public function validateMenuType(string $type): bool {
@@ -106,12 +106,6 @@ class WebsiteHelper {
     }
 
     public function pozdrav() {
-        if(session_status() === PHP_SESSION_NONE) session_start();
-        if (!isset($_SESSION['Login'])) {
-            echo '<h3>Vitajte!</h3>';
-            return;
-        }
-
         $login = htmlspecialchars($_SESSION['Login']);
         $hour = date('H');
         if ($hour < 12) {
@@ -139,7 +133,7 @@ class WebsiteHelper {
                     </div>
                     <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle fs-5" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-3 mb-lg-0 active">';
-        self::printMenuForGeneral($menu);
+                            self::printMenuForGeneral($menu);
         echo '          </ul>
                     </div>
                 </div>
@@ -161,7 +155,7 @@ class WebsiteHelper {
                     </div>
                     <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle fs-5" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-3 mb-lg-0 active">';
-        self::printMenuForLogin($menu);
+                            self::printMenuForLogin($menu);
         echo '          </ul>
                     </div>
                 </div>
@@ -206,5 +200,35 @@ class WebsiteHelper {
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
 </head>";
     }
+
+    public static function renderQuestions(int $limit = 5): void {
+        $otazky = new Otazky();
+        $questions = $otazky->zobrazOtazky($limit);
+
+        echo '<div class="container mt-4 mb-5">';
+        echo '<h4 class="logolist">Posledné otázky od používateľov:</h4>';
+
+        if (!empty($questions)) {
+            foreach ($questions as $q) {
+                echo '<div class="card my-3 border-dark shadow-sm">';
+                echo '<div class="card-body" style="background: rgb(248, 245, 237);">';
+                echo '<h5 class="card-title">' . htmlspecialchars($q['names']) . ' sa pýta:</h5>';
+                echo '<p class="card-text">' . nl2br(htmlspecialchars($q['question'])) . '</p>';
+                echo '</div></div>';
+            }
+        } else {
+            echo '<p>Žiadne otázky zatiaľ neboli pridané.</p>';
+        }
+        echo '</div>';
+    }
+
+    public static function sessionControl() {
+        if (session_status() === PHP_SESSION_NONE) session_start();
+        if (!isset($_SESSION['Login'])) {
+            echo "<script>window.location.href = 'registracia.php';</script>";
+            exit;
+        }
+    }
+
 }
 ?>

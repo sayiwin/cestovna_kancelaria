@@ -1,5 +1,4 @@
 <?php
-namespace cestovna_kancelaria\classes;
 
 session_start();
 
@@ -12,19 +11,16 @@ require_once(__DIR__ . '/../classes/Users.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
         $login = $_POST['login'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $userId = $_SESSION['user_id'];
 
         $users = new Users();
 
-        $updateResult = $users->updateUser($firstname, $lastname, $login, $password, $email, $phone, $userId);
+        $updateResult = $users->updateUser($login);
 
         if ($updateResult === true) {
+            session_start();
+            $_SESSION['user_id'] = $user['ID'];
+            $_SESSION['Login'] = $user['login'];
             header('Location: ../home.php');
             exit();
         } else {

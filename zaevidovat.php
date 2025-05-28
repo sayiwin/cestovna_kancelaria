@@ -1,5 +1,6 @@
 <?php 
   include_once "./classes/WebsiteHelper.php";
+  WebsiteHelper::sessionControl();
   $websiteHelper = new WebsiteHelper();
   WebsiteHelper::renderHead();
 ?>
