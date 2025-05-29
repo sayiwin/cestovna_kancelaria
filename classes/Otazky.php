@@ -24,7 +24,7 @@ class Otazky extends Database {
             ]);
             http_response_code(200);
             return $insert;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             error_log("Chyba pri vkladaní do DB: " . $exception->getMessage());
             http_response_code(500);
             return false;
@@ -34,8 +34,8 @@ class Otazky extends Database {
     public function zobrazOtazky(int $limit = 5): array {
         $sql = "SELECT names, question FROM questions ORDER BY id DESC LIMIT :limit";
         $statement = $this->connection->prepare($sql);
-        $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
+        $statement->bindValue(':limit', $limit, PDO::PARAM_INT);
         $statement->execute();
-        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 }

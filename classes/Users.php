@@ -22,7 +22,7 @@ class Users extends Database {
             $statement->execute();
             $existingUser = $statement->fetch();
             if ($existingUser) {
-                throw new \Exception("Používateľ už existuje.");
+                throw new Exception("Používateľ už existuje.");
             }
 
             $sql = "INSERT INTO users (firstname, lastname, login, password, email, phone) VALUES (?, ?, ?, ?, ?, ?)";
@@ -34,7 +34,7 @@ class Users extends Database {
             $statement->bindParam(5, $email);
             $statement->bindParam(6, $phone);
             $statement->execute();
-        } catch (\Exception $e){
+        } catch (Exception $e){
             echo "Chyba pri vkladaní dát do databázy: " . $e->getMessage();
         }
     }
@@ -46,13 +46,13 @@ class Users extends Database {
         $statement->execute();
         $user = $statement->fetch();
         if (!$user) {
-            throw new \Exception("Používateľ s daným menom neexistuje.");
+            throw new Exception("Používateľ s daným menom neexistuje.");
         }
 
         $storedPassword = $user['password'];
         
         if (!password_verify($password, $storedPassword)) {
-            throw new \Exception("Nesprávne heslo.");
+            throw new Exception("Nesprávne heslo.");
         }
 
         session_start();
@@ -76,16 +76,13 @@ class Users extends Database {
         try {
             $result = $statement->execute();
             return $result;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             error_log("Chyba pri mazaní: " . $exception->getMessage());
             return false;
         }
     }
 
     public function updateUser($login) {
-        if (session_status() == PHP_SESSION_NONE) {
-            sesion_start();
-        }
         try {
             $sql = "UPDATE users SET login = ?";
 
@@ -93,8 +90,8 @@ class Users extends Database {
 
             $stmt = $this->connection->prepare($sql);
 
-                $stmt->bindParam(1, $login);
-                $stmt->bindParam(2, $_SESSION['user_id']);
+            $stmt->bindParam(1, $login);
+            $stmt->bindParam(2, $_SESSION['user_id']);
 
             $stmt->execute();
 

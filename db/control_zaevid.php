@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die('Používateľ nie je prihlásený!');
     }
 
-    $login = $_SESSION['Login'];
     $count = $_POST['count'] ?? '';
     $city = $_POST['city'] ?? '';
     $types = $_POST['types'] ?? '';
@@ -18,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $request = new Zaevidovat();
-    $ulozene = $request->ulozitSpravu($login, $count, $city, $types);
+    $ulozene = $request->ulozitSpravu($count, $city, $types);
 
     if ($ulozene) {
         header('Location: ../end.php');
