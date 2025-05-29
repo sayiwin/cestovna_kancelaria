@@ -14,7 +14,7 @@ class WebsiteHelper {
                 $menu = [
                     'home' => ['name' => 'Domov', 'path' => 'home.php'],
                     'portfolio' => ['name' => 'Katalóg', 'path' => 'katalog.php'],
-                    'registration' => ['name' => 'Cestovná registrácia', 'path' => 'zaevidovat.php'],
+                    'zaevidovat' => ['name' => 'Cestovná registrácia', 'path' => 'zaevidovat.php'],
                 ];
             }
         }
@@ -36,9 +36,9 @@ class WebsiteHelper {
         if (self::validateMenuType($type)) {
             if ($type === "header") {
                 $menu = [
-                    'home' => ['name' => 'Registrácia', 'path' => 'registracia.php'],
+                    'registracia' => ['name' => 'Registrácia', 'path' => 'registracia.php'],
                     'faq' => ['name' => 'O nás', 'path' => 'faq.php'],
-                    'portfolio' => ['name' => 'Otázky', 'path' => 'otazky.php'],
+                    'otazky' => ['name' => 'Otázky', 'path' => 'otazky.php'],
                 ];
             }
         }
@@ -56,9 +56,7 @@ class WebsiteHelper {
     }
 
     public function renderCarousel($page = 'others') {
-        if(session_status() === PHP_SESSION_NONE) session_start();
         $data = json_decode(file_get_contents('db/datas.json'), true);
-        if (!isset($data[$page])) return;
 
         $carousel = $data[$page];
         $carousel_id = "carousel_" . $page;
