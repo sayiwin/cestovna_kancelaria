@@ -1,8 +1,7 @@
 <?php
+session_start();
 
 require_once('../classes/Users.php');
-
-session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $_POST['login'] ?? '';

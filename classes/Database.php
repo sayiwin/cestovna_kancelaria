@@ -23,7 +23,7 @@ class Database {
                 $config['PASSWORD'],
                 $options
             );
-        } catch (\PDOException $e) {
+        } catch (PDOException $e) {
             die("Connection error: " . $e->getMessage());
         }
     }
