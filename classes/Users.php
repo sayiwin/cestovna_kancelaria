@@ -40,9 +40,9 @@ class Users extends Database {
     }
 
     function login($login, $password) {
-        $sql = "SELECT * FROM users WHERE login = ?";
+        $sql = "SELECT * FROM users WHERE login = :login";
         $statement = $this->connection->prepare($sql);
-        $statement->bindParam(1, $login);
+        $statement->bindParam(':login', $login);
         $statement->execute();
         $user = $statement->fetch();
         if (!$user) {
