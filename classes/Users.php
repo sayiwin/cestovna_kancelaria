@@ -100,4 +100,12 @@ class Users extends Database {
             return "Chyba pri aktualizácii údajov: " . $e->getMessage();
         }
     }
+
+    public function getUserByLogin($login) {
+    $sql = "SELECT * FROM users WHERE login = :login";
+    $stmt = $this->connection->prepare($sql);
+    $stmt->bindParam(':login', $login);
+    $stmt->execute();
+    return $stmt->fetch();
+}
 }

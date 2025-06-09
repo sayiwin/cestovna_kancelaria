@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: registracia.php');
-    exit();
-}
-
 require_once(__DIR__ . '/../classes/Users.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -17,11 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $updateResult = $users->updateUser($login);
 
         if ($updateResult === true) {
-            session_start();
-            $_SESSION['user_id'] = $user['ID'];
-            $_SESSION['Login'] = $user['login'];
-            header('Location: ../home.php');
-            exit();
+            $user = $users->getUserByLogin($login);
+
+            if ($user) {
+                $_SESSION['user_id'] = $user['ID'];
+                $_SESSION['Login'] = $user['login'];
+                header('Location: ../home.php');
+                exit();
+            } else {
+                echo "Nepodarilo sa načítať údaje používateľa po aktualizácii.";
+            }
         } else {
             echo $updateResult;
         }
