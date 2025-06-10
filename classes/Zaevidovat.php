@@ -11,17 +11,15 @@ class Zaevidovat extends Database {
     }
     
     public function ulozitSpravu($count, $city, $types) {
-        $sql = "INSERT INTO request (IDuser, count, city, types)
-                VALUES(:IDuser, :count, :city, :types)";
-        $statement = $this->connection->prepare($sql);
-    
         try {
-            $insert = $statement->execute([
-                ':IDuser' => $_SESSION['user_id'],
-                ':count' => $count,
-                ':city' => $city,
-                ':types' => $types
-            ]);
+            $sql = "INSERT INTO request (IDuser, count, city, types)
+                    VALUES(:IDuser, :count, :city, :types)";
+            $statement = $this->connection->prepare($sql);
+            $statement->bindParam(':IDuser', $_SESSION['user_id']);
+            $statement->bindParam(':count', $count);
+            $statement->bindParam(':city', $city);
+            $statement->bindParam(':types', $types);
+            $insert = $statement->execute();
             http_response_code(200);
             return $insert;
         } catch (Exception $exception) {
