@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/Otazky.php';
+require_once __DIR__ . '/Recenzia.php';
 class WebsiteHelper {
 
     public function validateMenuType(string $type): bool {
@@ -38,7 +38,7 @@ class WebsiteHelper {
                 $menu = [
                     'registracia' => ['name' => 'Registrácia', 'path' => 'registracia.php'],
                     'faq' => ['name' => 'O nás', 'path' => 'faq.php'],
-                    'otazky' => ['name' => 'Otázky', 'path' => 'otazky.php'],
+                    'recenzie' => ['name' => 'Recenzie', 'path' => 'recenzie.php'],
                 ];
             }
         }
@@ -201,19 +201,19 @@ class WebsiteHelper {
 </head>";
     }
 
-    public static function renderQuestions(int $limit = 5): void {
-        $otazky = new Otazky();
-        $questions = $otazky->zobrazOtazky($limit);
+    public static function renderReview(int $limit = 5): void {
+        $recenzia = new Recenzia();
+        $review = $recenzia->zobrazRecenziu($limit);
 
         echo '<div class="container mt-4 mb-5">';
-        echo '<h4 class="logolist">Posledné otázky od používateľov:</h4>';
+        echo '<h4 class="logolist">Posledné recenzie od používateľov:</h4>';
 
-        if (!empty($questions)) {
-            foreach ($questions as $q) {
+        if (!empty($review)) {
+            foreach ($review as $r) {
                 echo '<div class="card my-3 border-dark shadow-sm">';
                 echo '<div class="card-body" style="background: rgb(248, 245, 237);">';
-                echo '<h5 class="card-title">' . htmlspecialchars($q['names']) . ' sa pýta:</h5>';
-                echo '<p class="card-text">' . nl2br(htmlspecialchars($q['question'])) . '</p>';
+                echo '<h5 class="card-title">'. 'Dňa ' . htmlspecialchars($r['dates']). ' ' . htmlspecialchars($r['names']) . ' hovorí:</h5>';
+                echo '<p class="card-text">' . nl2br(htmlspecialchars($r['review'])) . '</p>';
                 echo '</div></div>';
             }
         } else {
