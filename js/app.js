@@ -2,13 +2,13 @@ function validateForms(event) {
     // Skryjeme predchádzajúce chyby
     document.getElementById('namesError').style.display = 'none';
     document.getElementById('emailError').style.display = 'none';
-    document.getElementById('questionError').style.display = 'none';
+    document.getElementById('reviewError').style.display = 'none';
     document.getElementById('termsError').style.display = 'none';
     
     // Zhromažďovanie hodnôt
     var names = document.getElementById('names').value;
     var email = document.getElementById('email').value;
-    var question = document.getElementById('question').value;
+    var review = document.getElementById('review').value;
     var terms = document.getElementById('terms').checked;
     
     var isValid = true;
@@ -26,8 +26,8 @@ function validateForms(event) {
     }
 
     // Kontrola, či je otázka prázdna
-    if (question.trim() === "") {
-      document.getElementById('questionError').style.display = 'block';
+    if (review.trim() === "") {
+      document.getElementById('reviewError').style.display = 'block';
       isValid = false;
     }
 
