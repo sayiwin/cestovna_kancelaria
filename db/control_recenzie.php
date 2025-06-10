@@ -1,20 +1,20 @@
 <?php
-require_once('../classes/Otazky.php');
+require_once('../classes/Recenzia.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $names = $_POST['names'] ?? '';
     $email = $_POST['email'] ?? '';
-    $question = $_POST['question'] ?? '';
+    $review = $_POST['review'] ?? '';
 
-    if (empty($names) || empty($email) || empty($question)) {
+    if (empty($names) || empty($email) || empty($review)) {
         die('Chyba: Všetky polia sú povinné!');
     }
 
-    $otazky = new Otazky();
-    $ulozene = $otazky->ulozitSpravu($names, $email, $question);
+    $recenzia = new Recenzia();
+    $ulozene = $recenzia->ulozitSpravu($names, $email, $review);
 
     if ($ulozene) {
-        header('Location: ../otazka.php');
+        header('Location: ../recenzia.php');
         exit;
     } else {
         die('Chyba pri odosielaní správy do databázy!');
